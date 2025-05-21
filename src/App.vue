@@ -21,9 +21,13 @@ body {
     <button @click="submitReview">Отправить</button>
 
     <h3 v-if="sentiment">Эмоциональная характеристика</h3>
-   
+    
   </div>
-
+  <div>
+    <li class="status" style="height: 50px; width: 50px;">
+      
+    </li>
+  </div>
 
 
   
