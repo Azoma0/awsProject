@@ -36,29 +36,6 @@ import TheWelcome from './components/TheWelcome.vue'
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      reviewText: '',
-      sentiment: ''
-    };
-  },
-  methods: {
-    async submitReview() {
-      const response = await fetch('https://your-backend-endpoint.com/review', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text: this.reviewText })
-      });
-
-      const data = await response.json();
-      this.sentiment = data.sentiment || 'Нет результата';
-    }
-  }
-};
-</script>
-
 <style>
 body {
   font-family: Arial, sans-serif;
@@ -86,32 +63,6 @@ body {
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      reviewText: '',
-      sentiment: null
-    }
-  },
-  methods: {
-    async submitReview() {
-      try {
-        const response = await fetch('https://your-backend-url/submit-review', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ text: this.reviewText })
-        });
-
-        const data = await response.json();
-        this.sentiment = data.sentiment; // пример: { Sentiment: "POSITIVE", SentimentScore: { Positive: 0.98, ... } }
-      } catch (error) {
-        console.error('Ошибка при отправке:', error);
-      }
-    }
-  }
-}
-</script>
 
 <style>
 .container {
