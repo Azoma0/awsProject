@@ -1,8 +1,3 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 
 
 
@@ -16,7 +11,7 @@ body {
 <template>
   <div class="container">
     <h2>Текст отзыва:</h2>
-    <textarea v-model="reviewText" placeholder="Введите текст..." rows="6" cols="60"/>
+    <textarea v-model="reviewText" placeholder="Введите текст..." rows="10" cols="100"/>
     <br />
     <button @click="submitReview">Отправить</button>
 
@@ -25,7 +20,7 @@ body {
   </div>
   <div>
     <li class="status" style="height: 50px; width: 50px;">
-      
+
     </li>
   </div>
 
