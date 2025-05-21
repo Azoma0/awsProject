@@ -36,6 +36,8 @@ import TheWelcome from './components/TheWelcome.vue'
   </div>
 </template>
 
+
+
 <style>
 body {
   font-family: Arial, sans-serif;
@@ -63,6 +65,32 @@ body {
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      reviewText: '',
+      sentiment: null
+    }
+  },
+  methods: {
+    async submitReview() {
+      try {
+        const response = await fetch('https://main.d2sv92pf3q2ptc.amplifyapp.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text: this.reviewText })
+        });
+
+        const data = await response.json();
+        this.sentiment = data.sentiment; // пример: { Sentiment: "POSITIVE", SentimentScore: { Positive: 0.98, ... } }
+      } catch (error) {
+        console.error('Ошибка при отправке:', error);
+      }
+    }
+  }
+}
+</script>
 
 <style>
 .container {
