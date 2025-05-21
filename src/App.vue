@@ -3,45 +3,64 @@ import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 </script>
 
+
+
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div class="p-4 max-w-2xl mx-auto">
+    <h1 class="text-2xl font-bold mb-4">Отправить отзыв</h1>
 
-    <div class="wrapper">
-      <HelloWorld msg="Текст отзыва:" />
+    <label class="block font-semibold mb-1" for="review">Текст отзыва:</label>
+    <textarea
+      id="review"
+      v-model="reviewText"
+      placeholder="Введите текст..."
+      class="w-full h-32 p-2 border rounded mb-3"
+    ></textarea>
+
+    <button
+      @click="submitReview"
+      class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mb-6"
+    >
+      Отправить
+    </button>
+
+    <div v-if="sentiment">
+      <h2 class="font-bold text-lg mb-2">Эмоциональная характеристика</h2>
+      <textarea
+        class="w-full h-24 p-2 border rounded"
+        :value="sentiment"
+        readonly
+      ></textarea>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script>
+export default {
+  data() {
+    return {
+      reviewText: '',
+      sentiment: ''
+    };
+  },
+  methods: {
+    async submitReview() {
+      const response = await fetch('https://your-backend-endpoint.com/review', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: this.reviewText })
+      });
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+      const data = await response.json();
+      this.sentiment = data.sentiment || 'Нет результата';
+    }
   }
+};
+</script>
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+<style>
+body {
+  font-family: Arial, sans-serif;
 }
 </style>
+

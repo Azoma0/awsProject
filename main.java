@@ -1,34 +1,35 @@
 public class main{
-//     public static void main(String[] args) {
-//         int[] sum = new int[]{2,2,3};
-//         int[] sum1 = new int[]{5,4,1};
-//         int result = 1;
-//         for(int i= 0; i<sum.length; i++){
-//             result *= sum[i];
-//         }
-//           int result1 = 1;
-//         for(int i= 0; i<sum1.length; i++){
-//             result1 *= sum1[i];
-//         }
+    public static void main(String[] args) {
+        int[] sum = new int[]{2,2,3};
+        int[] sum1 = new int[]{5,4,1};
+        int result = 1;
+        for(int i= 0; i<sum.length; i++){
+            result *= sum[i];
+        }
+          int result1 = 1;
+        for(int i= 0; i<sum1.length; i++){
+            result1 *= sum1[i];
+        }
 
-//         if(result > result1){
-//             System.out.println(result - result1);
-//         }else{
-//             System.out.println(result1 - result);
-//         }
-
-
-//         Game game = new Game();
-//         System.out.println(game.combat(10, 14));
+        if(result > result1){
+            System.out.println(result - result1);
+        }else{
+            System.out.println(result1 - result);
+        }
 
 
-//         RentCar rentCar = new RentCar();
-//         System.out.println(rentCar.rentalCarCost(3));
+        Game game = new Game();
+        System.out.println(game.combat(10, 14));
 
-//         Quarter quarter = new Quarter();
-//         System.out.println(quarter.quarterOf(10));
-//     }
-// }
+
+        RentCar rentCar = new RentCar();
+        System.out.println(rentCar.rentalCarCost(3));
+
+        Quarter quarter = new Quarter();
+        System.out.println(quarter.quarterOf(10));
+ 
+    }
+}
 
 class CuboidVolumes{
 
@@ -41,7 +42,6 @@ class CuboidVolumes{
         for(int i= 0; i<secondCuboid.length; i++){
             result2 *= secondCuboid[i];
         }
-
         if(result1 > result2){
            return result1 - result2;
         }else{
@@ -99,9 +99,9 @@ class Quarter{
     }
 }
 
-class MaxAndMin{
-     public static String highAndLow(String numbers) {
-
-    return "throw towel";
+class Welcome{
+    public String sayHello(String [] name, String city, String state){
+    
+        return "";
   }
 }
