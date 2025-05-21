@@ -16,9 +16,7 @@ body {
     <button @click="submitReview">Отправить</button>
 <div>
     <h2 >Эмоциональная характеристика</h2>
-    <li class="status" style="height: 50px; width: 50px;">
-
-    </li>
+    <textarea v-model="reviewText" placeholder="" rows="10" cols="100"/>
   </div>
   </div>
     
