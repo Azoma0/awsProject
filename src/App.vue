@@ -24,7 +24,9 @@ body {
     </li>
   </div>
 
-
+<div>
+  <area shape="0" coords="10" href="" alt="status">
+</div>
   
 </template>
 
