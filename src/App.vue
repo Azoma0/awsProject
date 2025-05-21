@@ -1,9 +1,3 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
-
 
 <template>
   <div class="p-4 max-w-2xl mx-auto">
