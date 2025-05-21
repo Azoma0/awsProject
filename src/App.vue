@@ -25,25 +25,14 @@ body {
       <p><strong>Настроение:</strong> {{ sentiment.Sentiment }}</p>
       <p><strong>Детали:</strong></p>
       <ul>
-        <li v-for="(value, key) in sentiment.SentimentScore" :key="key">
-          {{ key }}: {{ (value * 100).toFixed(2) }}%
-        </li>
+        
       </ul>
     </div>
   </div>
 
 
 
-   <h3 v-if="sentiment">Эмоциональная характеристика</h3>
-    <div v-if="sentiment">
-      <p><strong>Настроение:</strong> {{ sentiment.Sentiment }}</p>
-      <p><strong>Детали:</strong></p>
-      <ul>
-        <li v-for="(value, key) in sentiment.SentimentScore" :key="key">
-          {{ key }}: {{ (value * 100).toFixed(2) }}%
-        </li>
-      </ul>
-    </div>
+  
 </template>
 
 <style>
