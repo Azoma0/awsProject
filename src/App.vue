@@ -16,20 +16,12 @@ body {
 <template>
   <div class="container">
     <h2>Текст отзыва:</h2>
-    <textarea v-model="reviewText" placeholder="Введите текст..." rows="60" cols="600"/>
+    <textarea v-model="reviewText" placeholder="Введите текст..." rows="6" cols="60"/>
     <br />
     <button @click="submitReview">Отправить</button>
 
     <h3 v-if="sentiment">Эмоциональная характеристика</h3>
-    <div v-if="sentiment">
-      <p><strong>Настроение:</strong> {{ sentiment.Sentiment }}</p>
-      <p><strong>Детали:</strong></p>
-      <ul>
-        <li style="height: 50px; width: 50px;">
-
-        </li>
-      </ul>
-    </div>
+   
   </div>
 
 
